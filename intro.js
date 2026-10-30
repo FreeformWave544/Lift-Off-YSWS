@@ -150,7 +150,7 @@ window.addEventListener('wheel', (event) => {
     document.getElementById('scrollPrompt').style.opacity = count
     console.log(count)
     if (count < 0.05) {
-        window.location.replace('./main.html')
+        window.location.replace('./pages/main.html')
     }
 })
 
