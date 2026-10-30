@@ -1,9 +1,12 @@
 html, body {
 margin: 0;
-width: 100%;
-height: 100%;
 overflow: hidden;
-background: #101014;
+background: #00B9F7;
+
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #1d52a8, #b0d5e6);
+  position: relative;
 }
 
 canvas.webgl {
@@ -13,6 +16,17 @@ display: block;
 width: 100%;
 height: 100%;
 z-index: 0;
+}
+
+.html::after, body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: black;
+  filter: url(#cloudNoise);
+  opacity: 0.15;
+  mix-blend-mode: screen;
+  pointer-events: none;
 }
 
 .hidden {
@@ -29,4 +43,12 @@ z-index: 0;
 .continue:hover {
     transition: transform 0.5s ease;
     transform: scale(1.1) rotateX(20deg) rotateY(5deg);
+}
+
+::-webkit-scrollbar {
+    visibility: hidden;
+}
+
+@view-transition {
+    navigation: auto;
 }

@@ -37,16 +37,16 @@ camera.position.z = 5
 
 scene.add(camera)
 
-const controls = new OrbitControls(
-    camera,
-    canvas
-)
+// const controls = new OrbitControls(
+//     camera,
+//     canvas
+// )
 
-controls.mouseButtons.LEFT = null
-controls.enableDamping = true
-controls.enablePan = false
-controls.minDistance = 3.2
-controls.maxDistance = 50
+// controls.mouseButtons.LEFT = null
+// controls.enableDamping = true
+// controls.enablePan = false
+// controls.minDistance = 3.2
+// controls.maxDistance = 50
 
 const ambientLight = new THREE.AmbientLight(0xffffff, 1.5)
 scene.add(ambientLight)
@@ -144,6 +144,16 @@ droneLoader.load('Public/Drone/FPV%20Drone%20Frame.glb', (gltf) => {
     scene.add(drone)
 })
 
+let count = 1.0
+window.addEventListener('wheel', (event) => {
+    count -= 0.05
+    document.getElementById('scrollPrompt').style.opacity = count
+    console.log(count)
+    if (count < 0.05) {
+        window.location.replace('/main.html')
+    }
+})
+
 const clock = new THREE.Timer()
 var spinSpeed = 1.0
 let parallaxSpeed = 1.0
@@ -155,7 +165,6 @@ const tick = (timestamp) =>
     const elapsed = clock.getElapsed()
     if (drone) {
         spinSpeed = Math.max((spinSpeed - (0.1 * delta * (1 + (spinSpeed)))), 5.0)
-        console.log(0.1 * delta * (1 + (spinSpeed)), "[]", spinSpeed)
         drone.position.y += (0.1 * delta * 25) * direction.y
         drone.position.x += (0.1 * delta * 25) * direction.x
         if (drone.position.clone().project(camera).y >= 0.9) {
@@ -180,7 +189,7 @@ const tick = (timestamp) =>
     const parallaxY = cursor.y * 0.5
     camera.position.x += (parallaxX - camera.position.x) * 5 * delta * parallaxSpeed
     camera.position.y += (-parallaxY - camera.position.y) * 5 * delta * parallaxSpeed
-    controls.update()
+    // controls.update()
     renderer.render(
         scene,
         camera

@@ -1,0 +1,74 @@
+.icon-dot {
+    height: 125px;
+    width: 125px;
+    border-radius: 50%;
+    background-color: brown;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    transition: transform 0.4s ease;
+}
+
+.icon-dot img {
+    animation: spin 15s linear infinite;
+}
+
+.icon-dot:hover {
+    transform: rotate(720deg);
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.html, body {
+    color: #f0f8ff;
+    font-size: 20px;
+    margin: 0;
+    overflow: hidden;
+    background: #00B9F7;
+    width: 100%;
+    height: 500vh;
+    background: linear-gradient(135deg, #1d52a8, #b0d5e6);
+    position: relative;
+}
+
+.html::after, body::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: black;
+    filter: url(#cloudNoise);
+    opacity: 0.15;
+    mix-blend-mode: screen;
+    pointer-events: none;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.continue {
+    transition: transform 0.6s cubic-bezier(0.34, 2.2, 0.64, 1);
+    color: aqua;
+    font-size: 100px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.continue:hover {
+    transition: transform 0.5s ease;
+    transform: scale(1.1) rotateX(20deg) rotateY(5deg);
+}
+
+::-webkit-scrollbar {
+    visibility: hidden;
+}
+
+@view-transition {
+    navigation: auto;
+}
