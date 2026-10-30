@@ -1,0 +1,22 @@
+{
+  "name": "runic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "gsap": "^3.15.0",
+    "three": "^0.186.1",
+    "vite": "^8.3.4"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true
+  }
+}
