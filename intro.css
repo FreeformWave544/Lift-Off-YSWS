@@ -1,12 +1,12 @@
 html, body {
-margin: 0;
-overflow: hidden;
-background: #00B9F7;
-
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(135deg, #1d52a8, #b0d5e6);
-  position: relative;
+    font-family: 'Chewy', system-ui;
+    margin: 0;
+    overflow: hidden;
+    background: #00B9F7;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #1d52a8, #b0d5e6);
+    position: relative;
 }
 
 canvas.webgl {

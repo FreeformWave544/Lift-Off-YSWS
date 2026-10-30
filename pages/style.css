@@ -1,3 +1,5 @@
+@import url('https://googleapis.com');
+
 .icon-dot {
     height: 125px;
     width: 125px;
@@ -27,6 +29,7 @@
 }
 
 .html, body {
+    font-family: 'Chewy', system-ui;
     color: #f0f8ff;
     font-size: 20px;
     margin: 0;
@@ -71,4 +74,10 @@
 
 @view-transition {
     navigation: auto;
+}
+
+form input {
+    font-size: inherit;
+    padding: 8px 15px;
+    border-radius: 4px;
 }

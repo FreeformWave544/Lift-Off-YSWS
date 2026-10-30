@@ -1,0 +1,58 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+</head>
+<nav class="navbar">
+    <a href="/index.html" class="nav-logo-wrapper">
+        <img src="/assets/drone.svg" width="50px" style="display: block;">
+    </a>
+    <div class="nav-links">
+        <a href="/main.html">Home</a>
+        <a href="/pages/about.html">About</a>
+        <a href="/pages/signup.html">Sign Up!</a>
+    </div>
+    <div class="nav-spacer"></div>
+</nav>
+<style>
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: rgba(165, 42, 42, 0.5);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.nav-logo-wrapper {
+    justify-self: start;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+a {
+    font-size: 30px;
+    color: rgb(108, 255, 157);
+    text-decoration: underline rgba(108, 255, 157, 0);
+    transition: text-decoration-color 0.2s linear, color 0.2s linear;
+}
+
+a:hover {
+    color: rgb(192, 250, 211);
+    text-decoration: underline;
+}
+
+a img {
+    transition: transform 0.2s linear;
+}
+
+a img:hover {
+    transform: scale(1.2);
+}
+</style>

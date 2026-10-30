@@ -138,7 +138,7 @@ const logo = new THREE.Mesh(new THREE.PlaneGeometry(1.0, 1.0, 1, 1), material)
 
 const droneLoader = new GLTFLoader();
 let drone = null
-droneLoader.load('Public/Drone/FPV%20Drone%20Frame.glb', (gltf) => {
+droneLoader.load('./Drone/Drone.glb', (gltf) => {
     drone = gltf.scene
     drone.scale.set(5, 5, 5)
     scene.add(drone)
@@ -150,7 +150,7 @@ window.addEventListener('wheel', (event) => {
     document.getElementById('scrollPrompt').style.opacity = count
     console.log(count)
     if (count < 0.05) {
-        window.location.replace('/main.html')
+        window.location.replace('./main.html')
     }
 })
 
