@@ -53,7 +53,7 @@ img {
     margin: 0;
     background: #00B9F7;
     width: 100%;
-    height: 500vh;
+    height: 100%;
     background: linear-gradient(135deg, #1d52a8, #b0d5e6);
     position: relative;
 }
@@ -114,7 +114,7 @@ form input {
 .box {
     background-color: brown;
     border-radius: 25px;
-    width: 90vw;
+    width: 40vw;
     margin: 0 auto;
     padding: 1px;
 }

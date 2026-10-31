@@ -146,7 +146,7 @@ droneLoader.load('./Drone/Drone.glb', (gltf) => {
 
 let count = 1.0
 window.addEventListener('wheel', (event) => {
-    count -= 0.05
+    count -= 0.2
     document.getElementById('scrollPrompt').style.opacity = count
     console.log(count)
     if (count < 0.05) {

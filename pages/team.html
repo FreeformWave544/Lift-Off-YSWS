@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lift-Off - Team</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="text-align: center; height: 100%;">
+    <div id="navbar"></div><br><br><br><br><br>
+    <div class="box" style="width: 60vw;">
+        <h1>Aditya</h1>
+        <div style="display: flex; flex-direction: row; gap: 50px; padding-left: 30px; padding-right: 30px; padding-bottom: 50px; justify-content: center; align-items: center;">
+            <div style="margin-left: auto;">
+                The one who is organising this amazing YSWS!
+            </div>
+            <div class="img-container" style="margin-left: auto;"><img src="../imgs/pfp/FreeformWave.png" alt="Aditya's PfP." height="200px"></div>
+        </div>
+    </div><br />
+    <div style="display: grid; gap: 40px; grid-template-columns: 2fr 2fr;">
+        <div class="box">
+            <h1>FreeformWave</h1>
+            <div style="display: flex; flex-direction: row; gap: 50px; padding-left: 30px; padding-right: 30px; padding-bottom: 50px; justify-content: center; align-items: center;">
+                <div style="margin-left: auto;">
+                    One of our web developers who helped develop this very site!
+                </div>
+                <div class="img-container" style="margin-left: auto;"><img src="../imgs/pfp/FreeformWave.png" alt="FreeformWave's PfP." height="200px"></div>
+            </div>
+        </div>
+        <div class="box">
+            <h1>sAI</h1>
+            <div style="display: flex; flex-direction: row; gap: 50px; padding-left: 30px; padding-right: 30px; padding-bottom: 50px; justify-content: center; align-items: center;">
+                <div style="margin-left: auto;">
+                    Another of our web developers who helped develop this very site!
+                </div>
+                <div class="img-container" style="margin-left: auto;"><img src="../imgs/pfp/FreeformWave.png" alt="sAI's PfP." height="200px"></div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./script.js"></script>
+    <div class="cloud-noise-bg"> <svg style="display: none;"> <filter id="cloudNoise"> <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" stitchTiles="stitch"/> </filter> </svg> </div>
+</body>
+</html>
+<script>
+const img = document.querySelector(".box img");
+
+img.addEventListener("mousemove", (e) => {
+    const rect = img.getBoundingClientRect();
+    img.style.transformOrigin = `${((e.clientX - rect.left) / rect.width) * 100}% ${((e.clientY - rect.top) / rect.height) * 100}%`;
+    img.style.transform = "scale(1.2)";
+});
+
+img.addEventListener("mouseleave", () => {
+    img.style.transform = "scale(1.0)";
+    img.style.transformOrigin = "center center";
+});
+</script>
