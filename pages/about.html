@@ -6,11 +6,38 @@
     <title>Lift-Off - About</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="text-align: center;">
     <div id="navbar"></div>
-    <div style="display: flex; justify-content: center; align-items: center; min-height: 80vh;">
-        ABOUT ME!
+    <article>
+        Lift-Off is a YSWS for the non-profit, educational charity known as: Hack Club.<br><br>
+
+        But what does this mean in plain English?<br>
+        Lift-Off is an event where you ship <i>anything</i> that flies, we ship drones,
+        RC planes, hardware to build, and so, so much more!<br>
+        Hence the name YSWS (You Ship We Ship).
+    </article>
+    <div class="box">
+        <h1>What can you build?</h1>
+        <div style="display: flex; flex-direction: row; gap: 50px; padding-left: 30px; padding-right: 30px; padding-bottom: 50px; justify-content: center; align-items: center;">
+            <div style="margin-left: auto;">This thing,<br />this other thing,<br />and this really cool thing.</div>
+            <div class="img-container" style="margin-left: auto;"><img src="../imgs/plane.webp" alt="Example of what you could build." height="500px"></div>
+        </div>
     </div>
     <script type="module" src="./script.js"></script>
+    <div class="cloud-noise-bg"> <svg style="display: none;"> <filter id="cloudNoise"> <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" stitchTiles="stitch"/> </filter> </svg> </div>
 </body>
 </html>
+<script>
+const img = document.querySelector(".box img");
+
+img.addEventListener("mousemove", (e) => {
+    const rect = img.getBoundingClientRect();
+    img.style.transformOrigin = `${((e.clientX - rect.left) / rect.width) * 100}% ${((e.clientY - rect.top) / rect.height) * 100}%`;
+    img.style.transform = "scale(1.2)";
+});
+
+img.addEventListener("mouseleave", () => {
+    img.style.transform = "scale(1.0)";
+    img.style.transformOrigin = "center center";
+});
+</script>

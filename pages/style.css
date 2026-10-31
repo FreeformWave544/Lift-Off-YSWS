@@ -15,6 +15,24 @@
     animation: spin 15s linear infinite;
 }
 
+article {
+    display: block;
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 0 25px;
+
+    text-align: center;
+    font-family: 'Chewy', cursive;
+    font-size: 24px;
+    line-height: 1.6;
+    color: #f0f8ff;
+}
+
+img {
+    border-radius: 15px;
+
+}
+
 .icon-dot:hover {
     transform: rotate(720deg);
 }
@@ -33,7 +51,6 @@
     color: #f0f8ff;
     font-size: 20px;
     margin: 0;
-    overflow: hidden;
     background: #00B9F7;
     width: 100%;
     height: 500vh;
@@ -69,7 +86,19 @@
 }
 
 ::-webkit-scrollbar {
-    visibility: hidden;
+    background-color: #5585c9ce;
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #55b8c9ce;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(1, 116, 116);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    background-clip: padding-box;
 }
 
 @view-transition {
@@ -80,4 +109,33 @@ form input {
     font-size: inherit;
     padding: 8px 15px;
     border-radius: 4px;
+}
+
+.box {
+    background-color: brown;
+    border-radius: 25px;
+    width: 90vw;
+    margin: 0 auto;
+    padding: 1px;
+}
+
+.box img {
+    transition: transform 0.2s ease-out, transform-origin 0.4s ease-out, filter 0.2s ease;
+    transform-origin: center center;
+    cursor: zoom-in;
+    transform: scale(1.0);
+    filter: sepia(80%) saturate(200%) hue-rotate(-20deg);
+    cursor: grabbing;
+}
+
+.box img:hover {
+    transform: scale(1.2);
+    filter: sepia(0%) saturate(100%) hue-rotate(0deg);
+}
+
+.img-container {
+    overflow: hidden;
+    height: 500px;
+    width: fit-content;
+
 }
