@@ -145,14 +145,17 @@ droneLoader.load('./Drone/Drone.glb', (gltf) => {
 })
 
 let count = 1.0
-window.addEventListener('wheel', (event) => {
+window.addEventListener('wheel', (event) => { scrollStuff(event) })
+window.addEventListener('touchmove', (event) => { scrollStuff(event) })
+
+function scrollStuff(event) {
     count -= 0.2
     document.getElementById('scrollPrompt').style.opacity = count
     console.log(count)
     if (count < 0.05) {
         window.location.replace('./pages/main.html')
     }
-})
+}
 
 const clock = new THREE.Timer()
 var spinSpeed = 1.0
