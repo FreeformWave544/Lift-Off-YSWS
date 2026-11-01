@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lift-Off - About</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="text-align: center;">
+    <div id="navbar"></div>
+    <article>
+        As part of Hack Club, of course we have rewards and incentives for projects!
+    </article>
+    <div class="box" style="width: 85vw;">
+        <h1>What can you Buy?</h1>
+        <div style="display: flex; flex-direction: row; gap: 50px; padding-left: 30px; padding-right: 30px; padding-bottom: 50px; justify-content: center; align-items: center;">
+            <div style="margin-left: auto;">This thing,<br />this other thing,<br />and this really cool thing.</div>
+            <div class="img-container" style="margin-left: auto;"><img src="../imgs/plane.webp" alt="Example of what you could build." height="500px"></div>
+        </div>
+    </div><br /><br /><br><br><br><br><br><br><br><br>
+    <div class="shopContainer">
+        <div class="shopTrack">
+            <img src="https://cdn.which.one/productimages/F/V/C/B092VM5CVF.jpg">
+            <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcR6ADHxnOikliEb9TI675-6s2IHVrGRI6UQtgtd9hgV2PsgRN7xy1Sw0jhbT-sqif-LoJKXRUjoQWQ8797_GmQ3oNosH39I30hdvcW9tPXPHKea0r-Ht2w-J5lrUoNw9qcdqw1BNw&usqp=CAc">
+            <img src="https://media.4rgos.it/i/Argos/7449798_R_Z001A?w=1500&h=880&qlt=70&fmt=webp">
+            <img src="https://radio-controlled.co.uk/wp-content/uploads/2025/03/RM15005DGR-1-1-e843-OGX5.webp">
+        </div>
+    </div>
+    <script type="module" src="./script.js"></script>
+    <div class="cloud-noise-bg"> <svg style="display: none;"> <filter id="cloudNoise"> <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" stitchTiles="stitch"/> </filter> </svg> </div>
+</body>
+</html>
+
+<script>
+const img = document.querySelector(".box img");
+
+img.addEventListener("mousemove", (e) => {
+    const rect = img.getBoundingClientRect();
+    img.style.transformOrigin = `${((e.clientX - rect.left) / rect.width) * 100}% ${((e.clientY - rect.top) / rect.height) * 100}%`;
+    img.style.transform = "scale(1.2)";
+});
+
+img.addEventListener("mouseleave", () => {
+    img.style.transform = "scale(1.0)";
+    img.style.transformOrigin = "center center";
+});
+
+const track = document.querySelector(".shopTrack");
+const images = [...track.querySelectorAll("img")];
+
+window.addEventListener("load", () => {
+    const setWidth = track.scrollWidth;
+    const copies = Math.ceil((window.innerWidth * 3) / setWidth);
+    for (let i = 0; i < copies; i++) { images.forEach( img => { track.appendChild(img.cloneNode(true)); } ); }
+    track.style.setProperty("--shift", `-${setWidth}px`);
+    track.classList.add("ready");
+});
+</script>
+
+<style>
+body {
+    overflow-x: hidden;
+}
+
+.shopContainer {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background-color: brown;
+    width: 150vw;
+    margin-left: -25vw;
+    height: 500px;
+    border-radius: 30px;
+    rotate: 15deg;
+}
+
+.shopTrack {
+    display: flex;
+    flex-shrink: 0;
+    width: max-content;
+}
+
+.shopTrack.ready {
+    animation: slide 15s linear infinite;
+}
+
+.shopTrack:has(img:hover) {
+    animation-play-state: paused;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(var(--shift));
+    }
+}
+
+.shopTrack img {
+    height: 450px;
+    width: auto;
+    margin-right: 20px;
+    flex-shrink: 0;
+    position: relative;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    filter: sepia(80%) saturate(200%) hue-rotate(-20deg);
+}
+
+.shopTrack img:hover {
+    z-index: 150;
+    transform: scale(1.1);
+    filter: none;
+}
+</style>
