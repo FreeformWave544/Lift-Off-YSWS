@@ -13,16 +13,17 @@
         <div class="icon-dot">
             <img src="../assets/battery.svg" width="70px">
         </div>
-        <span style="font-size: 300px;">LIFT</span>
+        <span class="title">LIFT</span>
         <div class="icon-dot">
             <img src="../assets/drone.svg" width="70px">
         </div>
     </div>
+    <div id="flag"><a href="./signup.html"><img src="../assets/flag-orpheus-left.png" width="300px"></a></div>
     <div style="display: flex; justify-content: center; gap: 50px;">
         <div class="icon-dot">
             <img src="../assets/plane.svg" width="70px">
         </div>
-        <span style="font-size: 300px;">OFF</span>
+        <span class="title">OFF</span>
         <div class="icon-dot">
             <img src="../assets/propeller.svg" width="70px" style="position: relative; left: 6px;">
         </div>
@@ -31,3 +32,51 @@
     <script type="module" src="./script.js"></script>
 </body>
 </html>
+<style>
+    .title {
+        font-size: clamp(45px, 15vw, 300px);
+        line-height: 1;
+    }
+
+    .title-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: clamp(5px, 3vw, 50px);
+        width: 100%;
+    }
+
+    .icon-dot img {
+        width: clamp(25px, 5vw, 70px);
+        height: auto;
+    }
+
+    #flag {
+        display: block;
+        position: fixed;
+        top: 6%;
+        animation: up-down 4s ease-in-out 0.2s infinite alternate;
+    }
+
+    #flag img {
+        width: clamp(100px, 25vw, 300px);
+        height: auto;
+        transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    #flag img:hover {
+        filter: saturate(140%) hue-rotate(15deg) sepia(15%) brightness(105%);
+        transform: scale(1.1);
+    }
+
+    @keyframes up-down {
+        from { top: 6%; }
+        50% { scale: 1.2; }
+        to { top: 80%; }
+    }
+
+    @media (max-width: 600px) {
+        .title { font-size: 15vw; }
+        .title-row { gap: 5px; }
+    }
+</style>

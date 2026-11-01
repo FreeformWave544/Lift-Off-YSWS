@@ -11,6 +11,7 @@ export default defineConfig({
                 about: resolve(import.meta.dirname, 'pages/about.html'),
                 navbar: resolve(import.meta.dirname, 'components/navbar.html'),
                 signup: resolve(import.meta.dirname, 'pages/signup.html'),
+                team: resolve(import.meta.dirname, 'pages/team.html')
             }
         }
     }
