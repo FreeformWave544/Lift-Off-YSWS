@@ -153,7 +153,7 @@ function scrollStuff(event) {
     document.getElementById('scrollPrompt').style.opacity = count
     console.log(count)
     if (count < 0.05) {
-        window.location.replace('./pages/main')
+        window.location.replace('./pages/main.html')
     }
 }
 
