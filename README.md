@@ -1,10 +1,9 @@
 <div align="center">
 
-  <img src="https://img.itch.zone/aW1nLzIyNjM0MzM5LnBuZw==/315x250%23c/zZnp3b.png" alt="logo" width="200" height="auto" />
   <h1><b>Lift Off — – - YSWS</b></h1>
 
   <h2>
-A fun, sci-fi, incremental, hardcore-style, horde game. (Hmm I wonder if I can fit any more genres in...)
+A website for a little hardware YSWS
   </h2>
 
 <h4>
