@@ -63,7 +63,7 @@ Distributed under the MIT License. See LICENSE.txt for more information.
 <!-- Links -->
 ## Links
 
-|> [itch.io](https://alex.johnson7.co.uk/hackclub/LiftOff/)
+|> [My Domain](https://alex.johnson7.co.uk/hackclub/LiftOff/)
 
 
 <!-- Acknowledgments -->
